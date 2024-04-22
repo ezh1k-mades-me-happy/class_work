@@ -17,7 +17,7 @@ login_manager.init_app(app)
 @app.route('/')
 def index():
     title = 'Главная'
-    return render_template('base.html', title=title)
+    return render_template('index.html', title=title)
 
 
 @app.route('/training/<prof>')

@@ -20,18 +20,6 @@ def index():
     return render_template('index.html', title=title)
 
 
-@app.route('/training/<prof>')
-def training(prof):
-    return render_template('training.html', prof=prof)
-
-
-@app.route('/list_prof/<type>')
-def profession(type):
-    profs = ['слесарь'] * 15
-    profs = [j + ' ' + str(i + 1) for i, j in enumerate(profs)]
-    return render_template('prof.html', list=profs, type=type)
-
-
 @app.route('/form1', methods=['GET', 'POST'])
 def registr():
     return render_template('form1.html')

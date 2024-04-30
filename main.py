@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['SECRET_KEY'] = 'iAmTerminator'
 
 login_manager = LoginManager()
 login_manager.init_app(app)

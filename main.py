@@ -1,9 +1,9 @@
 from flask import Flask, render_template, redirect
 from data import db_session
-from data.jobs import Jobs
 from data.users import User
 from data.login_form import LoginForm
 from flask_login import LoginManager
+from forms.user import RegisterForm
 
 
 app = Flask(__name__)
@@ -28,18 +28,18 @@ def load_user(user_id):
 
 @app.route('/order', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
+    form = RegisterForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
-        return redirect('/success')
+        user = User(
+            burger=form.burger.data,
+            name=form.name.data,
+            phone=form.phone.data
+        )
+        db_sess.add(user)
+        db_sess.commit()
+        return redirect('/order')
     return render_template('order.html', title='Авторизация', form=form)
-
-
-def zapros():
-    sess = db_session.create_session()
-    for user in sess.query(User).filter(User.age == 21):
-        print(user.name)
-    sess.close()
 
 
 def main1():
@@ -53,7 +53,6 @@ def main1():
 
 def main():
     db_session.global_init("db/blogs.db")
-    zapros()
     app.run('127.0.0.1', port=80)
 
 

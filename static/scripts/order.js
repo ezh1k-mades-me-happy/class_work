@@ -14,9 +14,9 @@ document.getElementById("order-action").onclick = function () {
     });
 
     if (!hasError) {
+        alert(name.value + ", ваш заказ (" + burger.value + ") принят!");
         [burger, name, phone].forEach(item => {
             item.value = "";
         });
-        alert("Спасибо за заказ! Мы скоро свяжемся с вами!");
     }
 }

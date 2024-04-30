@@ -31,30 +31,13 @@ def load_user(user_id):
     return db_sess.query(User).get(user_id)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/order', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
-        user = db_sess.query(User).filter(User.email == form.email.data).first()
-        if user and user.check_password(form.password.data):
-            login_user(user, remember=form.remember_me.data)
-            return redirect("/")
-        return render_template('login.html',
-                               message="Неправильный логин или пароль",
-                               form=form)
-    return render_template('login.html', title='Авторизация', form=form)
-
-
-def login_user(user, remember_me=False):
-    pass
-
-
-def zapros():
-    sess = db_session.create_session()
-    for user in sess.query(User).filter(User.age == 21):
-        print(user.name)
-    sess.close()
+        return redirect('/success')
+    return render_template('order.html', title='Авторизация', form=form)
 
 
 def main1():
@@ -64,35 +47,6 @@ def main1():
     res = sess.query(User).all()
     for el in res:
         print(el)
-
-
-def add_user():
-    sess = db_session.create_session()
-    user = User()
-    user.surname = 'Scott'
-    user.name = 'Ridley'
-    user.age = 21
-    user.position = 'captain'
-    user.speciality = 'research engineer'
-    user.address = 'module_1'
-    user.email = 'scott_chief@mars.org'
-    user.hashed_password = '123'
-    sess.add(user)
-    sess.commit()
-    sess.close()
-
-
-def add_jobs():
-    sess = db_session.create_session()
-    job = Jobs()
-    job.team_leader = 1
-    job.job = 'deployment of residential modules 1 and 2'
-    job.work_size = 15
-    job.collaborators = '2, 3'
-    job.is_finished = False
-    sess.add(job)
-    sess.commit()
-    sess.close()
 
 
 def main():

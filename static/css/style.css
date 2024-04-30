@@ -189,7 +189,7 @@ body {
     background-image: url("images/burgers_bg.png");
     background-position: top center;
     background-size: 1400px;
-    padding-bottom: 180px;
+    padding-bottom: 0px;
 }
 
 .products-items {
@@ -259,7 +259,7 @@ body {
     background-image: url("images/order_bg.png");
     background-position: top center;
     background-repeat: no-repeat;
-    padding-bottom: 180px;
+    padding-bottom: 110px;
     overflow: hidden;
 }
 

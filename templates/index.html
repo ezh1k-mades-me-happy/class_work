@@ -23,7 +23,7 @@
                         <a data-link="products">Меню бургеров</a>
                     </li>
                     <li class="menu-item">
-                        <a data-link="order">Оформление заказа</a>
+                        <a class="nav-link active" aria-current="page" href="/order">Оформление заказа</a>
                     </li>
                 </ul>
             </nav>
@@ -95,7 +95,7 @@
                         <div class="products-item-weight">360 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger1">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -120,7 +120,7 @@
                         <div class="products-item-weight">390 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger2">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -145,7 +145,7 @@
                         <div class="products-item-weight">420 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger3">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -170,7 +170,7 @@
                         <div class="products-item-weight">220 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger4">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -195,7 +195,7 @@
                         <div class="products-item-weight">220 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger5">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -220,7 +220,7 @@
                         <div class="products-item-weight">320 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger6">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -244,7 +244,7 @@
                         <div class="products-item-weight">280 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger7">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -268,7 +268,7 @@
                         <div class="products-item-weight">380 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger8">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -292,7 +292,7 @@
                         <div class="products-item-weight">400 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger9">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -316,7 +316,7 @@
                         <div class="products-item-weight">300 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger10">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -340,7 +340,7 @@
                         <div class="products-item-weight">320 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger11">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -364,7 +364,7 @@
                         <div class="products-item-weight">360 гр</div>
                     </div>
                     <div class="products-item-action">
-                        <button class="button products-button">
+                        <button class="button products-button" id="burger12">
                             <span>Заказать</span>
                             <span>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -376,28 +376,6 @@
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="order" id="order">
-    <div class="container">
-        <div class="order-title common-title">оформление заказа</div>
-        <img src="/static/images/order_image.png" alt="order" class="order-image">
-        <div class="order-form">
-            <div class="order-form-text">Заполните все данные и наш менеджер свяжется с вами для подтверждения заказа</div>
-            <div class="order-form-inputs">
-                <div class="order-form-input">
-                    <input type="text" placeholder="Ваш заказ" id="burger">
-                </div>
-                <div class="order-form-input">
-                    <input type="text" placeholder="Ваше имя" id="name">
-                </div>
-                <div class="order-form-input">
-                    <input type="text" placeholder="Ваш телефон" id="phone">
-                </div>
-                <button class="button" id="order-action">Оформить заказ</button>
             </div>
         </div>
     </div>
